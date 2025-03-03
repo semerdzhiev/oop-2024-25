@@ -10,7 +10,7 @@ struct Rectangle
     int height;
 };
 
-int GetArea(const Rectangle& r)
+int getArea(const Rectangle& r)
 {
     return r.width * r.height;
 }
@@ -20,8 +20,8 @@ int main()
     Rectangle r1 = {5, 6};
     Rectangle r2 = {3, 4};
 
-    std::cout << GetArea(r1) << std::endl;
-    std::cout << GetArea(r2) << std::endl;
+    std::cout << getArea(r1) << std::endl;
+    std::cout << getArea(r2) << std::endl;
 }
  ```
  
@@ -32,7 +32,7 @@ struct Rectangle
     int width;
     int height;
 
-    int GetArea() const
+    int getArea() const
     {
         return width * height;
     }
@@ -43,8 +43,8 @@ int main()
     Rectangle r1 = {5, 6};
     Rectangle r2 = {3, 4};
 
-    std::cout << "Area of r1: " << r1.GetArea() << std::endl;
-    std::cout << "Area of r2: " << r2.GetArea() << std::endl;
+    std::cout << "Area of r1: " << r1.getArea() << std::endl;
+    std::cout << "Area of r2: " << r2.getArea() << std::endl;
 }
  ```
 #  
@@ -69,7 +69,7 @@ bool Rectangle::getArea(Rectangle* const this)
 }
 ```
 
-Забележете, че this е const указател към Point, т.е. не можем да меним this, но можем да променяме сочения от него обект.
+Забележете, че this е const указател към Rectangle, т.е. не можем да меним this, но можем да променяме сочения от него обект.
 Съответно:
 
 ```c++
