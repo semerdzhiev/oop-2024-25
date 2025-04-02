@@ -1,6 +1,6 @@
 # Изключения
 
-[Exception hierarchy](https://www.tutorialspoint.com/cplusplus/images/cpp_exceptions.jpg)
+![Exception hierarchy](https://www.tutorialspoint.com/cplusplus/images/cpp_exceptions.jpg)
 
 - Изключения се предизвикват от невалидни състояния, до които програмата може да достигне в хода на нейното изпълнение
 
