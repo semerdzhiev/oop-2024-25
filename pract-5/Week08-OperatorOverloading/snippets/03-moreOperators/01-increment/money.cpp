@@ -1,7 +1,10 @@
 #include "money.h"
 
 Money::Money(const unsigned int levs, const unsigned int stotinkas)
-    : levs(levs), stotinkas(stotinkas) {}
+{
+    this->levs = levs;
+    this->stotinkas = stotinkas;
+}
 
 bool Money::operator == (const Money& other) const
 {
@@ -52,21 +55,11 @@ Money Money::operator + (const unsigned int levs) const
     return *this + toAdd;
 }
 
-std::ostream& operator<<(std::ostream& out, const Money& money)
+Money& Money::operator ++ ()
 {
-    out << money.levs << " levs and " << money.stotinkas << " stotinkas";
-    return out;
-}
+    ++this->levs;
 
-std::istream& operator>>(std::istream& in, Money& money)
-{
-    in >> money.levs >> money.stotinkas;
-    return in;
-}
-
-Money operator + (const unsigned int levs, const Money& money)
-{
-    return money + levs;
+    return *this;
 }
 
 Money Money::operator ++ (int)
@@ -78,9 +71,19 @@ Money Money::operator ++ (int)
     return old;
 }
 
-Money& Money::operator ++ ()
+std::istream& operator >> (std::istream& in, Money& money)
 {
-    *this = *this + 1;
+    std::cout << "Enter levs: ";
+    in >> money.levs;
+    std::cout << "Enter stotinkas: ";
+    in >> money.stotinkas;
 
-    return *this;
+    return in;
+}
+
+std::ostream& operator << (std::ostream& out, const Money& money)
+{
+    out << money.levs << " levs and " << money.stotinkas << " stotinkas"; 
+
+    return out;
 }
