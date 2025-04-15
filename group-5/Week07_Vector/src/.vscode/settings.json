@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "*.embeddedhtml": "html",
+        "*.pl": "prolog",
+        "iostream": "cpp",
+        "istream": "cpp",
+        "cstdlib": "cpp",
+        "iosfwd": "cpp"
+    }
+}
